@@ -1,0 +1,71 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+.icon-logo {
+  width: 1.5em;
+}
+
+.icon-logo {
+  font-size: 2.5rem;
+}
+
+.icon-rectangle {
+  width: 0.763671875em;
+  font-size: 15rem;
+  fill: $color--orange;
+  z-index: -10;
+  transform: rotate(30);
+}
+
+.icon-diagram {
+  width: 0.994140625em;
+  font-size: 15rem;
+  fill: $color--blue;
+  z-index: -10;
+}
+
+.icon-moon {
+  width: 0.8076171875em;
+  font-size: 15rem;
+  fill: $color--red;
+  z-index: -10;
+  transform: rotate(45);
+}
+
+.icon-triangle {
+  width: 0.8369140625em;
+  font-size: 15rem;
+  fill: $color--yellow;
+  z-index: -10;
+  transform: rotate(45);
+}
+
+.icon-circle {
+  font-size: 12.5rem;
+  fill: $color--brown;
+  z-index: -10;
+}

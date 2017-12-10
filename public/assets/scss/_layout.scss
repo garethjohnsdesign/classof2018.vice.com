@@ -1,0 +1,141 @@
+//  Table of Contents:
+//
+//   1. Mixins
+//   2. Global
+//   3. Typography
+//   4. Buttons
+//   4. Navigation
+//   5. Sections
+//   6. Section One
+//   7. Section Two
+//   8. Section Three
+//   9. Section Four
+//   10. Projects
+//   11. Contact
+//   12. Footer
+
+
+// 1. Mixins
+// ---------
+
+
+
+@mixin links ($link, $hover) {
+  a {
+    color: $link;
+    &:hover {
+      color: $hover;   
+    }
+  }
+}
+
+@mixin link-underline($color, $size, $duration, $centered) {
+  color: $color;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  
+  &:before {
+    background-color: $color;
+    content: '';
+    height: $size;
+    position: absolute;
+    bottom: 0 - ($size/2);
+    transition: $duration;
+    width: 0;
+    @if $centered == 'true' {
+      left: 50%;
+      transform: translateX(-50%); 
+    }
+  }
+  
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
+// 2. Global
+// ---------
+
+body {
+  cursor: default;
+  font-kerning: normal;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+svg {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: $primary-color;
+  color: $secondary-color;
+}
+
+:focus {
+  outline: 0;
+}
+
+// 3. Typography
+// -------------
+
+a {
+  transition: $primary-transition;
+}
+
+.underline {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px $black solid;
+  &:hover {
+    border-bottom: 1px transparent solid;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+i, cite, em, var, address, dfn {
+  font-style: normal;
+}
+
+p a {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px $black solid;
+  &:hover {
+    border-bottom: 1px transparent solid;
+  }
+}
+
+h1 {
+  line-height: 1;
+  margin-bottom: 0;
+}
+  
+h1 a {
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+  &:hover {
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+    color: $primary-color;
+  }
+}
+
+
+#preload {
+  position: absolute;
+  overflow: hidden;
+  left: -9999px;
+  top: -9999px;
+  height: 1px;
+  width: 1px;
+}
