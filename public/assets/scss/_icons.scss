@@ -25,47 +25,23 @@ Single-colored icons can be modified like so:
   stroke: currentColor;
   fill: currentColor;
 }
-.icon-logo {
-  width: 1.5em;
+
+.icon-socials {
+  font-size: 1.5rem;
 }
 
-.icon-logo {
-  font-size: 2.5rem;
+.icon-vice-logo {
+  width: 3.0419921875em;
+  font-size: 2rem;
 }
 
-.icon-rectangle {
-  width: 0.763671875em;
-  font-size: 15rem;
-  fill: $color--orange;
-  z-index: -10;
-  transform: rotate(30);
+.icon-logo-left {
+  width: 1.873046875em;
+  font-size: 10rem;
+  color: $white;
 }
 
-.icon-diagram {
-  width: 0.994140625em;
-  font-size: 15rem;
-  fill: $color--blue;
-  z-index: -10;
-}
-
-.icon-moon {
-  width: 0.8076171875em;
-  font-size: 15rem;
-  fill: $color--red;
-  z-index: -10;
-  transform: rotate(45);
-}
-
-.icon-triangle {
-  width: 0.8369140625em;
-  font-size: 15rem;
-  fill: $color--yellow;
-  z-index: -10;
-  transform: rotate(45);
-}
-
-.icon-circle {
-  font-size: 12.5rem;
-  fill: $color--brown;
-  z-index: -10;
+.icon-vans-logo {
+  width: 2.8681640625em;
+  font-size: 1.5rem;
 }

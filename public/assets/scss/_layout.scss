@@ -62,9 +62,6 @@
 body {
   cursor: default;
   font-kerning: normal;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
 }
 
 svg {
@@ -85,6 +82,18 @@ img {
 :focus {
   outline: 0;
 }
+
+a img {
+  transition: $primary-transition;
+  display: block;
+  filter: saturate(100%) brightness(80%); 
+}
+
+a:hover img {
+  filter: saturate(0%) brightness(50%); 
+}
+    
+
 
 // 3. Typography
 // -------------
@@ -109,33 +118,55 @@ i, cite, em, var, address, dfn {
   font-style: normal;
 }
 
-p a {
-  padding-bottom: 0.25rem;
-  border-bottom: 1px $black solid;
-  &:hover {
-    border-bottom: 1px transparent solid;
-  }
-}
-
-h1 {
-  line-height: 1;
-  margin-bottom: 0;
-}
-  
-h1 a {
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
-  &:hover {
-    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
-    color: $primary-color;
-  }
-}
+// X. Navigation
+// -------------
 
 
-#preload {
+// X. Index
+// -------------
+
+.index__hero {
+  background-color: $color--red;
+}
+
+.index__hero__inner {
+  position: relative;
+  padding: 3rem;
+}
+
+.index__logo-top-left {
   position: absolute;
-  overflow: hidden;
-  left: -9999px;
-  top: -9999px;
-  height: 1px;
-  width: 1px;
+  top: -1rem;
+  left: 0;
+}
+
+.index__brand-bottom-left {
+  position: absolute;
+  left: 0;
+  color: $white;
+}
+
+.index__logo-bottom-right {
+  position: absolute;
+  bottom: -1rem;
+  right: 0;
+}
+
+// X. Category
+// -------------
+
+.category__hero {
+  background-color: $color--red;
+  color: $white;
+}
+
+
+// X. Footer
+// -------------
+
+.footer {
+  background-color: $color--red;
+  color: $white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }

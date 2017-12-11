@@ -13,10 +13,62 @@
 
 {% block main %}
 
-<h1>{{ entry.title }}</h1>
+<div class="grid-x index__hero">
+	<div class="small-12 cell">
+  	
+  	<div class="grid-container">
+    	<div class="grid-x grid-padding-x align-center index__hero__inner">
+        <div class="small-12 medium-9 cell">
+          
+          
+          <div class="index__logo-top-left">
+          <svg class="icon icon-logo-left"><use xlink:href="/assets/icons/symbol-defs.svg#icon-logo-left"></use></svg>
+          </div>
+          
+          {% set image = entry.heroImage.first() %}
+      		{% if image %}
+      			<img src="{{ image.getUrl }}" alt="{{ image.title }}"/>
+      		{% endif %}
+          
+          <div class="index__brand-bottom-left">
+          Presented by <svg class="icon icon-vans-logo"><use xlink:href="/assets/icons/symbol-defs.svg#icon-vans-logo"></use></svg>
+          </div>
+          
+          <div class="index__logo-bottom-right show-for-medium">
+          <svg class="icon icon-logo-left"><use xlink:href="/assets/icons/symbol-defs.svg#icon-logo-left"></use></svg>
+          </div>
+          
+      	</div>
+      </div>
+    </div>
+    
+	</div>
+</div>
 
 {% if entry.body|length %}
-<div class="epsilon center reverse">{{ entry.body }}</div>
+<div class="grid-container">
+<div class="grid-x grid-padding-x grid-padding-y">
+	<div class="small-8 cell">
+    {{ entry.body }}
+  </div>
+</div>
+</div>
 {% endif %}
+
+<div class="grid-container">
+<div class="grid-x grid-padding-x grid-padding-y">
+{% set categories = craft.categories %}
+{% for category in categories %}
+	<div class="small-12 medium-6 cell">
+  	Class of
+    <h2>{{ category.title }}</h2>
+    {% set image = category.heroImage.first() %}
+    {% if image %}
+    <a href="{{ category.url }}"><img src="{{ image.getUrl }}" alt="{{ image.title }}"/></a>
+    {% endif %}
+  </div>
+{% endfor %}
+</div>
+</div>
 				
 {% endblock %}

@@ -1,0 +1,66 @@
+{% extends "_layouts/site" %}
+
+{% block main %}
+
+{% set prevCategory = category.prevSibling %}
+{% set nextCategory = category.nextSibling %}
+{% set entries = craft.entries('mySection').relatedTo(category) %}
+
+<div class="grid-x grid-padding-y category__hero">
+	<div class="small-12 cell">
+  	
+  	<div class="grid-container">
+
+<div class="grid-x grid-padding-x grid-padding-y align-center">
+  <div class="small-12 medium-6 cell">
+    Class of
+    <h1>{{ category.title }}</h1>
+	</div>
+	
+	<div class="small-12 medium-6 cell text-right">
+	{% if prevCategory %}<a href="{{ prevCategory.url }}" class="button">Previous</a> {% endif %}{% if nextCategory %}<a href="{{ nextCategory.url }}" class="button">Next</a>{% endif %}
+	</div>
+	
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="small-12 medium-9 cell">
+      {{ category.body }}
+  	</div>
+</div>
+
+<div class="grid-x grid-padding-x">
+    <div class="small-12 medium-9 cell">
+      {% set image = category.heroImage.first() %}
+  		{% if image %}
+  			<img src="{{ image.getUrl }}" alt="{{ image.title }}"/>
+  		{% endif %}
+  	</div>
+</div> 
+    </div>
+    
+	</div>
+</div>
+
+<div class="grid-container">
+  <div class="grid-x grid-padding-x grid-padding-y category-index">
+    {% for entry in entries %}
+        <article class="small-12 medium-4 cell">
+            
+            <div class="grid-x grid-padding-x">
+            <div class="small-12 medium-12 cell">
+            <a href="{{ entry.url }}"><h2>{{ entry.title }}</h2></a>
+            </div>
+            </div>
+            
+            
+            {% set image = entry.heroImage.first() %}
+        		{% if image %}
+        			<a href="{{ entry.url }}"><img src="{{ image.getUrl }}" alt="{{ image.title }}"/></a>
+        		{% endif %}
+        </article>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

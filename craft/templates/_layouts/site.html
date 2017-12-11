@@ -29,17 +29,16 @@
 
 
 {% block body %}
-
-
+  
 	<header id="header">
-  Header
+  {% include "_includes/navigation" %}
 	</header>
 
 	<main id="main" role="main">
 		{% block main %}{% endblock %}
 	</main>
 
-	<footer id="footer">
-		Footer
+	<footer class="footer">
+		{% include "_includes/footer" %}
 	</footer>
 {% endblock %}
