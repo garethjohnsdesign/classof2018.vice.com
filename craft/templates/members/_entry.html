@@ -14,14 +14,17 @@
 
 {% block main %}
 
-
-  	
   	<div class="grid-container">
 
 <div class="grid-x grid-padding-x grid-padding-y align-center">
   <div class="small-12 medium-6 cell">
 
-    <h1>{{ entry.title }}</h1>
+          {% set countTotal = craft.entries.section('members').total() %}
+
+          <h6>1 / {{ countTotal }}</h6>
+        	<h1 class="accent">{{ entry.forename }}</h1>
+          <h1 class="uppercase">{{ entry.surename }}</h1>
+          
 	</div>
 	
 	<div class="small-12 medium-6 cell text-right">
@@ -36,8 +39,8 @@
 {% set nextEntry = entry.getNext(params) %}
 
 {# And make sure to only output the links if the element exists #}
-{% if prevEntry %}<a href="{{ prevEntry.url }}">Previous</a>{% endif %}
-{% if nextEntry %}<a href="{{ nextEntry.url }}">Next</a>{% endif %}
+{% if prevEntry %}<a href="{{ prevEntry.url }}" class="button">Previous</a>{% endif %}
+{% if nextEntry %}<a href="{{ nextEntry.url }}" class="button">Next</a>{% endif %}
 	</div>
 	
 </div>

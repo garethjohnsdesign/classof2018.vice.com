@@ -8,10 +8,19 @@
 }
 
 @font-face {
-  font-family: 'GT America Mono Regular';
+  font-family: 'Sharp Grotesk Book 15 Regular';
   src: 
-  url('../fonts/gt-america-mono-regular.woff2') format('woff2'), 
-  url('../fonts/gt-america-mono-regular.woff') format('woff');
+  url('../fonts/sharp-grotesk-book-15-regular.woff2') format('woff2'), 
+  url('../fonts/sharp-grotesk-book-15-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sharp Grotesk SmBold 20 Regular';
+  src: 
+  url('../fonts/sharp-grotesk-smbold-20-regular.woff2') format('woff2'), 
+  url('../fonts/sharp-grotesk-smbold-20-regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

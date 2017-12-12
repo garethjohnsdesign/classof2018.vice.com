@@ -31,11 +31,18 @@
       		{% endif %}
           
           <div class="index__brand-bottom-left">
-          Presented by <svg class="icon icon-vans-logo"><use xlink:href="/assets/icons/symbol-defs.svg#icon-vans-logo"></use></svg>
+            <div class="sponsor">
+              <a href="#">
+              <ul class="menu align-center">
+                <li>Presented by</li>
+                <li><svg class="icon icon-vans-logo"><use xlink:href="/assets/icons/symbol-defs.svg#icon-vans-logo"></use></svg></li>
+              </ul>
+              </a>
+            </div>
           </div>
           
           <div class="index__logo-bottom-right show-for-medium">
-          <svg class="icon icon-logo-left"><use xlink:href="/assets/icons/symbol-defs.svg#icon-logo-left"></use></svg>
+          <svg class="icon icon-logo-right"><use xlink:href="/assets/icons/symbol-defs.svg#icon-logo-right"></use></svg>
           </div>
           
       	</div>
@@ -60,8 +67,9 @@
 {% set categories = craft.categories %}
 {% for category in categories %}
 	<div class="small-12 medium-6 cell">
-  	Class of
-    <h2>{{ category.title }}</h2>
+  	<h6>{{ loop.index }} / {{ loop.length }}</h6>
+  	<h3 class="accent">Class of</h3>
+    <h3 class="uppercase">{{ category.title }}</h3>
     {% set image = category.heroImage.first() %}
     {% if image %}
     <a href="{{ category.url }}"><img src="{{ image.getUrl }}" alt="{{ image.title }}"/></a>

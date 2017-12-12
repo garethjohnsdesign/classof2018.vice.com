@@ -6,8 +6,14 @@
   font-style: normal; }
 
 @font-face {
-  font-family: 'GT America Mono Regular';
-  src: url("../fonts/gt-america-mono-regular.woff2") format("woff2"), url("../fonts/gt-america-mono-regular.woff") format("woff");
+  font-family: 'Sharp Grotesk Book 15 Regular';
+  src: url("../fonts/sharp-grotesk-book-15-regular.woff2") format("woff2"), url("../fonts/sharp-grotesk-book-15-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Sharp Grotesk SmBold 20 Regular';
+  src: url("../fonts/sharp-grotesk-smbold-20-regular.woff2") format("woff2"), url("../fonts/sharp-grotesk-smbold-20-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -1781,7 +1787,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fefefe;
-  font-family: "Sharp Grotesk Medium 25 Regular", sans-serif;
+  font-family: "Sharp Grotesk Book 15 Regular", sans-serif;
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
@@ -3577,37 +3583,37 @@ h6, .h6 {
 
 h1, .h1 {
   font-size: 1.5rem;
-  line-height: 1.4;
+  line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h2, .h2 {
   font-size: 1.25rem;
-  line-height: 1.4;
+  line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h3, .h3 {
   font-size: 1.1875rem;
-  line-height: 1.4;
+  line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h4, .h4 {
   font-size: 1.125rem;
-  line-height: 1.4;
+  line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h5, .h5 {
   font-size: 1.0625rem;
-  line-height: 1.4;
+  line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h6, .h6 {
-  font-size: 1rem;
-  line-height: 1.4;
+  font-size: 0.75rem;
+  line-height: 1.2;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
@@ -3623,7 +3629,7 @@ h6, .h6 {
   h5, .h5 {
     font-size: 1.25rem; }
   h6, .h6 {
-    font-size: 1rem; } }
+    font-size: 0.75rem; } }
 
 a {
   line-height: inherit;
@@ -3827,12 +3833,12 @@ ul.no-bullet, ol.no-bullet {
   display: inline-block;
   vertical-align: middle;
   margin: 0 0 1rem 0;
-  font-family: inherit;
+  font-family: "Sharp Grotesk Medium 25 Regular", sans-serif;
   padding: 0.85em 1em;
   -webkit-appearance: none;
   border: 1px solid transparent;
   border-radius: 0;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color, color;
   font-size: 0.9rem;
   line-height: 1;
   text-align: center;
@@ -3842,7 +3848,7 @@ ul.no-bullet, ol.no-bullet {
   [data-whatinput='mouse'] .button {
     outline: 0; }
   .button:hover, .button:focus {
-    background-color: #090808;
+    background-color: #fefefe;
     color: #fefefe; }
   .button.tiny {
     font-size: 0.6rem; }
@@ -5762,6 +5768,11 @@ Single-colored icons can be modified like so:
   font-size: 10rem;
   color: #fefefe; }
 
+.icon-logo-right {
+  width: 2.244140625em;
+  font-size: 10rem;
+  color: #fefefe; }
+
 .icon-vans-logo {
   width: 2.8681640625em;
   font-size: 1.5rem; }
@@ -6537,15 +6548,10 @@ img {
   outline: 0; }
 
 a img {
-  transition: all 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
-  display: block;
-  filter: saturate(100%) brightness(80%); }
+  display: block; }
 
 a:hover img {
-  filter: saturate(0%) brightness(50%); }
-
-a {
-  transition: all 0.35s cubic-bezier(0.39, 0.575, 0.565, 1); }
+  box-shadow: 10px 10px #D31E1E; }
 
 .underline {
   padding-bottom: 0.25rem;
@@ -6558,6 +6564,40 @@ a {
 
 i, cite, em, var, address, dfn {
   font-style: normal; }
+
+.accent {
+  font-family: "Sharp Grotesk Book 15 Regular", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  line-height: 1; }
+
+.sponsor li {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+.navigation--mobile {
+  z-index: 1;
+  position: fixed;
+  background: #FFD600;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.35s cubic-bezier(0.39, 0.575, 0.565, 1);
+  visibility: hidden;
+  font-family: "Sharp Grotesk Medium 25 Regular", sans-serif;
+  font-size: 1.5rem; }
+  .navigation--mobile.open {
+    visibility: visible; }
+  .navigation--mobile a {
+    color: #FFFFFF;
+    padding: 1rem 0rem; }
+  .navigation--mobile a:hover {
+    color: #090909; }
+  .navigation--mobile .menu .active > a {
+    color: black; }
+  .navigation--mobile .hamburger-inner, .navigation--mobile .hamburger-inner::before, .navigation--mobile .hamburger-inner::after {
+    background-color: #FFFFFF; }
 
 .index__hero {
   background-color: #D31E1E; }
@@ -6584,9 +6624,29 @@ i, cite, em, var, address, dfn {
 .category__hero {
   background-color: #D31E1E;
   color: #fefefe; }
+  .category__hero a {
+    color: #fefefe;
+    text-decoration: underline; }
+  .category__hero a:hover {
+    text-decoration: none; }
+  .category__hero .button {
+    background-color: #0a0a0a;
+    text-decoration: none;
+    text-transform: uppercase; }
+  .category__hero .button:hover {
+    background-color: #fefefe;
+    color: #0a0a0a; }
 
 .footer {
   background-color: #D31E1E;
-  color: #fefefe;
   padding-top: 2rem;
   padding-bottom: 2rem; }
+
+.sponsor {
+  font-family: "Sharp Grotesk SmBold 20 Regular", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+  .sponsor a {
+    color: #fefefe; }
+  .sponsor a:hover {
+    color: #0a0a0a; }

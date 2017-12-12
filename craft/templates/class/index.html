@@ -10,54 +10,60 @@
 	<div class="small-12 cell">
   	
   	<div class="grid-container">
+    	
+        <div class="grid-x grid-padding-x grid-padding-y align-center">
+          <div class="small-12 medium-6 cell">
+          {% set countTotal = craft.categories.total() %}
+          {% set count = craft.categories({positionedBefore: category}).total() %}
+          <h6>{{ count +1 }} / {{ countTotal }}</h6>
+        	<h1 class="accent">Class of</h1>
+          <h1 class="uppercase">{{ category.title }}</h1>
+      	  </div>
+      	
+        	<div class="small-12 medium-6 cell text-right">
+        	{% if prevCategory %}<a href="{{ prevCategory.url }}" class="button"> ← Prev</a> {% endif %}{% if nextCategory %}<a href="{{ nextCategory.url }}" class="button">Next → </a>{% endif %}
+        	</div>
+        </div>
 
-<div class="grid-x grid-padding-x grid-padding-y align-center">
-  <div class="small-12 medium-6 cell">
-    Class of
-    <h1>{{ category.title }}</h1>
-	</div>
-	
-	<div class="small-12 medium-6 cell text-right">
-	{% if prevCategory %}<a href="{{ prevCategory.url }}" class="button">Previous</a> {% endif %}{% if nextCategory %}<a href="{{ nextCategory.url }}" class="button">Next</a>{% endif %}
-	</div>
-	
-</div>
+        <div class="grid-x grid-padding-x grid-padding-y">
+          <div class="small-12 medium-9 cell">
+            {{ category.body }}
+          </div>
+        </div>
 
-<div class="grid-x grid-padding-x">
-    <div class="small-12 medium-9 cell">
-      {{ category.body }}
-  	</div>
-</div>
-
-<div class="grid-x grid-padding-x">
-    <div class="small-12 medium-9 cell">
-      {% set image = category.heroImage.first() %}
-  		{% if image %}
-  			<img src="{{ image.getUrl }}" alt="{{ image.title }}"/>
-  		{% endif %}
-  	</div>
-</div> 
-    </div>
+        <div class="grid-x grid-padding-x grid-padding-y">
+          <div class="small-12 medium-12 cell">
+            {% set image = category.heroImageLandscape.first() %}
+        		{% if image %}
+        			<img src="{{ image.getUrl }}" alt="{{ image.title }}"/>
+        		{% endif %}
+        	</div>
+        </div>
     
-	</div>
+	  </div>
+  </div>
 </div>
 
 <div class="grid-container">
-  <div class="grid-x grid-padding-x grid-padding-y category-index">
-    {% for entry in entries %}
-        <article class="small-12 medium-4 cell">
+  <div class="grid-x grid-padding-x grid-padding-y small-up-1 medium-up-2 large-up-3 category-index">
+    {% for entry in craft.entries.section('members') %}
+        <article class="cell">
             
             <div class="grid-x grid-padding-x">
             <div class="small-12 medium-12 cell">
-            <a href="{{ entry.url }}"><h2>{{ entry.title }}</h2></a>
+            	<h6>{{ loop.index }} / {{ loop.length }}</h6>
+            	<h3 class="accent">{{ entry.forename }}</h3>
+              <h3 class="uppercase">{{ entry.surename }}</h3>
             </div>
             </div>
             
-            
-            {% set image = entry.heroImage.first() %}
-        		{% if image %}
+            <div class="grid-x grid-padding-x">
+            <div class="small-12 medium-12 cell">
+            	{% set image = entry.heroImage.first() %}
         			<a href="{{ entry.url }}"><img src="{{ image.getUrl }}" alt="{{ image.title }}"/></a>
-        		{% endif %}
+            </div>
+            </div>
+          
         </article>
     {% endfor %}
   </div>

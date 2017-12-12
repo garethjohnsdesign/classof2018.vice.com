@@ -31,11 +31,12 @@
 {% block body %}
   
 	<header id="header">
+  {% include "_includes/navigation--mobile" %}
   {% include "_includes/navigation" %}
 	</header>
 
 	<main id="main" role="main">
-		{% block main %}{% endblock %}
+  {% block main %}{% endblock %}
 	</main>
 
 	<footer class="footer">

@@ -5633,6 +5633,20 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/fonts\/sharp-grotesk-book-15-regular.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/fonts\/sharp-grotesk-book-15-regular.woff",
+		"oF": 0
+		},
+	"\/fonts\/sharp-grotesk-book-15-regular.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/fonts\/sharp-grotesk-book-15-regular.woff2",
+		"oF": 0
+		},
 	"\/fonts\/sharp-grotesk-medium-25-regular.woff": {
 		"cB": 0,
 		"ft": 8192,
@@ -5647,15 +5661,19 @@
 		"oAP": "\/fonts\/sharp-grotesk-medium-25-regular.woff2",
 		"oF": 0
 		},
-	"\/icons\/symbol-defs.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/icons\/symbol-defs.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
+	"\/fonts\/sharp-grotesk-smbold-20-regular.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/fonts\/sharp-grotesk-smbold-20-regular.woff",
+		"oF": 0
+		},
+	"\/fonts\/SharpGroteskSmBold20-Regular.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/fonts\/SharpGroteskSmBold20-Regular.woff2",
+		"oF": 0
 		},
 	"\/img\/logo.svg": {
 		"ft": 2097152,
