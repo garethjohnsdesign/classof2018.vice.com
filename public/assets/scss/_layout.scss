@@ -129,10 +129,18 @@ i, cite, em, var, address, dfn {
 // X. Navigation
 // -------------
 
+.navigation {
+  z-index: 3;
+}
+
+.navigation__inner {
+  z-index: 3;
+}
+
 .navigation--mobile {
   z-index: 1;
   position: fixed;
-  background: $color--highlight;
+  background: red;
   top: 0;
   left: 0;
   height: 100%;

@@ -23,5 +23,11 @@
 <body {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
 	{% block body %}{% endblock %}
 	{% block foot %}{% endblock %}
+	
+<!-- Scripts -->
+{% include "_includes/scripts" %}
+<!-- End Scripts -->
+
+
 </body>
 </html>

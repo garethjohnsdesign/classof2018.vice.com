@@ -114,7 +114,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/bower_components\/aos\/dist\/aos.js",
 		"oF": 0,
 		"sC": 3,
@@ -770,7 +770,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/foundation.min.js",
 		"oF": 0,
 		"sC": 3,
@@ -3568,7 +3568,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/bower_components\/jquery\/dist\/jquery.js",
 		"oF": 0,
 		"sC": 3,
@@ -4743,7 +4743,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/bower_components\/motion-ui\/dist\/motion-ui.js",
 		"oF": 0,
 		"sC": 3,
@@ -5356,7 +5356,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/bower_components\/svgxuse\/svgxuse.js",
 		"oF": 0,
 		"sC": 3,
@@ -5668,12 +5668,22 @@
 		"oAP": "\/fonts\/sharp-grotesk-smbold-20-regular.woff",
 		"oF": 0
 		},
-	"\/fonts\/SharpGroteskSmBold20-Regular.woff2": {
+	"\/fonts\/sharp-grotesk-smbold-20-regular.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/fonts\/SharpGroteskSmBold20-Regular.woff2",
+		"oAP": "\/fonts\/sharp-grotesk-smbold-20-regular.woff2",
 		"oF": 0
+		},
+	"\/icons\/symbol-defs.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/icons\/symbol-defs.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/img\/logo.svg": {
 		"ft": 2097152,
@@ -5703,8 +5713,8 @@
 		"oA": 0,
 		"oAP": "js\/min\/app-min.js",
 		"oF": 0,
-		"sC": 3,
-		"tS": 1
+		"sC": 0,
+		"tS": 0
 		},
 	"\/js\/min\/app-min.js": {
 		"ft": 64,
@@ -6317,6 +6327,38 @@
 "hooks": [
 	],
 "manualImportLinks": {
+	"\/js\/app.js": [
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/bower_components\/jquery\/dist\/jquery.js",
+			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/bower_components\/foundation-sites\/dist\/js\/foundation.min.js",
+			"position": 1,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/bower_components\/aos\/dist\/aos.js",
+			"position": 2,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/bower_components\/motion-ui\/dist\/motion-ui.js",
+			"position": 3,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/bower_components\/svgxuse\/svgxuse.js",
+			"position": 4,
+			"type": 0
+			}
+		]
 	},
 "projectAttributes": {
 	"creationDate": 534613424,
