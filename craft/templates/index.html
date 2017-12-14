@@ -1,14 +1,3 @@
-{#
- # Homepage template
- # -----------------
- #
- # This template gets loaded whenever the site's homepage is requested, because
- # the "Homepage" single-entry section's Template setting is set to "index".
- #
- # An `entry` variable will be automatically passed to this template, which will
- # be set to the Homepage entry.
--#}
-
 {% extends "_layouts/site" %}
 
 {% block main %}
@@ -17,7 +6,7 @@
 	<div class="small-12 cell">
   	
   	<div class="grid-container">
-    	<div class="grid-x grid-padding-x align-center index__hero__inner">
+    	<div class="grid-x grid-padding-x small-padding-collapse align-center index__hero__inner">
         <div class="small-12 medium-9 cell">
           
           
@@ -48,15 +37,16 @@
       	</div>
       </div>
     </div>
-    
+
 	</div>
 </div>
 
-{% if entry.body|length %}
+{% if entry.heroText|length %}
 <div class="grid-container">
 <div class="grid-x grid-padding-x grid-padding-y">
-	<div class="small-8 cell">
-    {{ entry.body }}
+	<div class="small-12 medium-8 cell">
+    {{ entry.heroText }}
+    <button class="button" data-open="videoModal">Video</button>
   </div>
 </div>
 </div>
@@ -67,13 +57,15 @@
 {% set categories = craft.categories %}
 {% for category in categories %}
 	<div class="small-12 medium-6 cell">
+  	<a href="{{ category.url }}">
   	<h6>{{ loop.index }} / {{ loop.length }}</h6>
   	<h3 class="accent">Class of</h3>
     <h3 class="uppercase">{{ category.title }}</h3>
-    {% set image = category.heroImage.first() %}
+    {% set image = category.featureImage.first() %}
     {% if image %}
-    <a href="{{ category.url }}"><img src="{{ image.getUrl }}" alt="{{ image.title }}"/></a>
+    <img src="{{ image.getUrl }}" alt="{{ image.title }}"/>
     {% endif %}
+    </a>
   </div>
 {% endfor %}
 </div>

@@ -1,0 +1,23 @@
+<div class="overlay-menu grid-y align-center" id="overlay-menu" data-toggler=".open">
+  <div class="shrink cell">
+    <div class="grid-x grid-padding-x align-center">
+    	<div class="shrink cell">
+    		
+    		<ul class="vertical menu text-center classes">
+      		{% set categories = craft.categories %}
+          {% for category in categories %}
+          <li><a href="{{ category.url }}" data-toggle="toggle" data-toggler=".is-active"><h3 class="uppercase">{{ category.title }}</h3></a></li>
+          {% endfor %}
+        </ul>
+        
+        <ul class="menu locales">
+          <li><a href="{{ category.url }}" data-toggle="toggle" data-toggler=".is-active">DE</a></li>
+          <li><a href="" data-toggle="toggle" data-toggler=".is-active">FR</a></li>
+          <li><a href="" data-toggle="toggle" data-toggler=".is-active">NL</a></li>
+          <li><a href="" data-toggle="toggle" data-toggler=".is-active">DE</a></li>
+        </ul>
+        
+    	</div>
+    </div>
+  </div>
+</div>

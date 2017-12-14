@@ -66,7 +66,8 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+// $global-width: rem-calc(1200);
+$global-width: rem-calc(1024);
 $global-lineheight: 1.5;
 /*
 $foundation-palette: (
@@ -181,7 +182,7 @@ $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
 $anchor-color: $primary-color;
 // $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
-$anchor-color-hover: scale-color($anchor-color, $lightness: 50%);
+$anchor-color-hover: $color--red;
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -196,9 +197,11 @@ $list-nested-side-margin: 1.25rem;
 $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
-$blockquote-color: $dark-gray;
+// $blockquote-color: $dark-gray;
+$blockquote-color: $black;
 $blockquote-padding: rem-calc(9 20 0 19);
-$blockquote-border: 1px solid $medium-gray;
+// $blockquote-border: 1px solid $medium-gray;
+$blockquote-border: 5px solid $black;
 $cite-font-size: rem-calc(13);
 $cite-color: $dark-gray;
 $cite-pseudo-content: '\2014 \0020';
@@ -298,7 +301,7 @@ $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
 // $button-background-hover: scale-color($button-background, $lightness: -15%);
-$button-background-hover: $white;
+$button-background-hover: $color--red;
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
@@ -744,7 +747,8 @@ $responsive-embed-ratios: (
 // 47. Reveal
 // ----------
 
-$reveal-background: $white;
+// $reveal-background: $white;
+$reveal-background: $color--red;
 $reveal-width: 600px;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
@@ -874,14 +878,16 @@ $topbar-unstack-breakpoint: medium;
 $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
+/*
 $grid-margin-gutters: (
   small: 20px,
   medium: 30px
 );
+*/
 $grid-margin-gutters: (
-  small: 20px,
-  medium: 30px,
-  large: 64px
+  small: 24px,
+  medium: 32px,
+  large: 48px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;

@@ -31,7 +31,6 @@
 {% block body %}
   
 	<header id="header">
-  {% include "_includes/navigation--mobile" %}
   {% include "_includes/navigation" %}
 	</header>
 
@@ -42,4 +41,8 @@
 	<footer class="footer">
 		{% include "_includes/footer" %}
 	</footer>
+	
+	{% include "_includes/overlay_menu" %}
+	{% include "_includes/video_modal" %}
+
 {% endblock %}

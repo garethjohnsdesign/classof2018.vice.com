@@ -1,67 +1,116 @@
-{#
- # Services entry template
- # -----------------------
- #
- # This template gets loaded whenever a Services entry's URL is requested,
- # because the Services section's Template setting is set to "services/_entry".
- #
- # An `entry` variable will be automatically passed to this template, which will
- # be set to the requested Services entry.
--#}
-
 {% extends "_layouts/site" %}
 {% set title = entry.title %}
 
 {% block main %}
+<div class="grid-container">
 
-  	<div class="grid-container">
-
-<div class="grid-x grid-padding-x grid-padding-y align-center">
-  <div class="small-12 medium-6 cell">
-
-          {% set countTotal = craft.entries.section('members').total() %}
-
-          <h6>1 / {{ countTotal }}</h6>
-        	<h1 class="accent">{{ entry.forename }}</h1>
-          <h1 class="uppercase">{{ entry.surename }}</h1>
-          
-	</div>
-	
-	<div class="small-12 medium-6 cell text-right">
-{# Get this entry's entry type #}
-{% set type = entry.getType() %}
-
-{# Set parameters for prev/next elements list #}
-{% set params = craft.entries.section('members').type(type) %}
-
-{# Get the prev/next elements #}
-{% set prevEntry = entry.getPrev(params) %}
-{% set nextEntry = entry.getNext(params) %}
-
-{# And make sure to only output the links if the element exists #}
-{% if prevEntry %}<a href="{{ prevEntry.url }}" class="button">Previous</a>{% endif %}
-{% if nextEntry %}<a href="{{ nextEntry.url }}" class="button">Next</a>{% endif %}
-	</div>
-	
-</div>
-
-<div class="grid-x grid-padding-x">
-    <div class="small-12 medium-9 cell">
-      {{ entry.body }}
+  <div class="grid-x grid-padding-x grid-padding-y align-center">
+    <div class="small-12 medium-6 cell">
+      {% set countTotal = craft.entries.section('members').total() %}
+      {% set count = craft.entries({section: 'members',positionedBefore: entry,}).total() %}
+      <h6>{{ count +1 }} / {{ countTotal }}</h6>
+    	<h1 class="accent">{{ entry.forename }}</h1>
+      <h1 class="uppercase">{{ entry.surname }}</h1>
   	</div>
-</div>
-
-<div class="grid-x grid-padding-x">
-    <div class="small-12 medium-9 cell">
-      {% set image = entry.heroImage.first() %}
-  		{% if image %}
-  			<img src="{{ image.getUrl }}" alt="{{ image.title }}"/>
-  		{% endif %}
+  	
+  	<div class="small-12 medium-6 cell text-right">
+      {# Get this entry's entry type #}
+      {% set type = entry.getType() %}
+      
+      {# Set parameters for prev/next elements list #}
+      {% set params = craft.entries.section('members').type(type) %}
+      
+      {# Get the prev/next elements #}
+      {% set prevEntry = entry.getPrev(params) %}
+      {% set nextEntry = entry.getNext(params) %}
+      
+      {# And make sure to only output the links if the element exists #}
+      {% if prevEntry %}<a href="{{ prevEntry.url }}" class="button uppercase"> ← Prev</a> {% endif %}{% if nextEntry %}<a href="{{ nextEntry.url }}" class="button uppercase">Next → </a>{% endif %}
   	</div>
-</div> 
+  </div>
+  
+  <div class="grid-x grid-padding-x">
+      <div class="small-12  cell">
+        <h6 class="uppercase">{{ entry.job }}, {{ entry.location }}</h6>
+    	</div>
+  </div>
+
+<article>
+{% for matrixBlock in entry.articleBody %}
+{% switch matrixBlock.type %}
+    
+    {% case "heading" %}    
+    {% if matrixBlock.position == 'full' %}
+    <div class="grid-x grid-padding-y">
+      <div class="small-12 cell">
+        <h3>{{ matrixBlock.heading | markdown }}</h3>
+      </div>
     </div>
+    {% elseif matrixBlock.position in ['left', 'right', 'center'] %}
+    <div class="grid-x grid-padding-y align-{{ matrixBlock.position }}">
+      <div class="small-12 medium-9 cell">
+        <h3>{{ matrixBlock.heading | markdown }}</h3>
+      </div>
+    </div>
+    {% endif %}
+    
 
-
-
-
+    {% case "text" %}    
+    {% if matrixBlock.position == 'full' %}
+    <div class="grid-x grid-padding-y">
+      <div class="small-12 cell">
+        {{ matrixBlock.text | markdown }}
+      </div>
+    </div>
+    {% elseif matrixBlock.position in ['left', 'right', 'center'] %}
+    <div class="grid-x grid-padding-y align-{{ matrixBlock.position }}">
+      <div class="small-12 medium-9 cell">
+        {{ matrixBlock.text | markdown }}
+      </div>
+    </div>
+    {% endif %}
+    
+    
+    {% case "image" %}
+    {% if matrixBlock.position == 'full' %}
+    <div class="grid-x grid-padding-y">
+      <div class="small-12 cell">
+        {{ matrixBlock.image[0].getImg() }}
+      </div>
+    </div>
+    {% elseif matrixBlock.position in ['left', 'right', 'center'] %}
+    <div class="grid-x grid-padding-y align-{{ matrixBlock.position }}">
+      <div class="small-12 medium-9 cell">
+        {{ matrixBlock.image[0].getImg() }}
+      </div>
+    </div>
+    {% endif %}
+    
+    {% case "quote" %}
+    {% if matrixBlock.position == 'full' %}
+    <div class="grid-x grid-padding-y">
+      <div class="small-12 cell">
+        <blockquote>{{ matrixBlock.quote }}</blockquote>
+      </div>
+    </div>
+    {% elseif matrixBlock.position in ['left', 'right', 'center'] %}
+    <div class="grid-x grid-padding-y align-{{ matrixBlock.position }}">
+      <div class="small-12 medium-9 cell">
+        <blockquote>{{ matrixBlock.quote }}</blockquote>
+      </div>
+    </div>
+    {% endif %}
+    
+    {% case "portraitImage" %}
+    <div class="grid-x grid-padding-y align-{{ matrixBlock.position }}">
+      <div class="small-12 medium-6 cell">
+        {{ matrixBlock.image[0].getImg() }}
+      </div>
+    </div>
+    
+{% endswitch %}
+{% endfor %}
+</article>
+  
+</div>
 {% endblock %}

@@ -137,15 +137,14 @@ i, cite, em, var, address, dfn {
   z-index: 3;
 }
 
-.navigation--mobile {
+.overlay-menu {
   z-index: 1;
   position: fixed;
-  background: red;
+  background: $color--red;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%; 
-  transition: $primary-transition;
   visibility: hidden;
   font-family: $header-font-family;
   font-size: 1.5rem;
@@ -154,21 +153,29 @@ i, cite, em, var, address, dfn {
     visibility: visible;
   }
   
-  a {
-    color: $color--white;
+  .classes a {
+    color: $white;
     padding: 1rem 0rem;
   }
   
-  a:hover {
-    color: $color--black;
+  .classes a:hover {
+    color: $black;
+  }
+  
+  .locales a {
+    color: $white;
+  }
+  
+  .locales a:hover {
+    color: $black;
   }
   
   .menu .active>a {
-    color: black;
+    color: $black;
   }
   
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-    background-color: $color--white;
+    background-color: $white;
   } 
 }
 
@@ -182,24 +189,28 @@ i, cite, em, var, address, dfn {
 .index__hero__inner {
   position: relative;
   padding: 3rem;
+  @include breakpoint(small only) {
+    padding: 6rem 1rem;
+  }
 }
 
 .index__logo-top-left {
   position: absolute;
   top: -1rem;
-  left: 0;
+  left: 1rem;
 }
 
 .index__brand-bottom-left {
   position: absolute;
-  left: 0;
+  left: 1rem;
+  bottom: 1rem;
   color: $white;
 }
 
 .index__logo-bottom-right {
   position: absolute;
   bottom: -1rem;
-  right: 0;
+  right: 1rem;
 }
 
 // X. Category
@@ -226,6 +237,19 @@ i, cite, em, var, address, dfn {
   }
 }
 
+// X. Article
+// -------------
+
+article {
+  a {
+    text-decoration: underline;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $black;
+  }
+}
+
 
 // X. Footer
 // -------------
@@ -234,6 +258,7 @@ i, cite, em, var, address, dfn {
   background-color: $color--red;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  margin-top: 3rem;
 }
 
 
